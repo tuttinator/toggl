@@ -91,15 +91,15 @@ class Toggl
   private
 
   def get(resource_name, data={})
-    self.class.get("/api/v1/#{resource_name}.json", :basic_auth => basic_auth, :query => data)
+    self.class.get("/api/v6/#{resource_name}.json", :basic_auth => basic_auth, :query => data)
   end
 
   def post(resource_name, data)
-    self.class.post("/api/v1/#{resource_name}.json", :body => data, :basic_auth => basic_auth)
+    self.class.post("/api/v6/#{resource_name}.json", :body => data, :basic_auth => basic_auth)
   end
 
   def delete(resource_name, id)
-    self.class.delete("/api/v1/#{resource_name}/#{id}.json", :basic_auth => basic_auth)
+    self.class.delete("/api/v6/#{resource_name}/#{id}.json", :basic_auth => basic_auth)
   end
 
   def basic_auth
